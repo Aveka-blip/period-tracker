@@ -1,6 +1,5 @@
 """
 Simple Period Tracker
-A beginner-friendly Python project.
 Saves your period start dates to a file and predicts your next one.
 """
 
