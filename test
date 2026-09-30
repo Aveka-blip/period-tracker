@@ -1,0 +1,27 @@
+"""
+Simple tests for the period tracker.
+Run with: python test_period_tracker.py
+"""
+
+from datetime import date
+from period_tracker import get_cycle_lengths
+
+
+def test_cycle_lengths():
+    dates = [date(2026, 1, 1), date(2026, 1, 29), date(2026, 2, 27)]
+    assert get_cycle_lengths(dates) == [28, 29]
+
+
+def test_one_date_has_no_cycles():
+    assert get_cycle_lengths([date(2026, 1, 1)]) == []
+
+
+def test_empty_list():
+    assert get_cycle_lengths([]) == []
+
+
+if __name__ == "__main__":
+    test_cycle_lengths()
+    test_one_date_has_no_cycles()
+    test_empty_list()
+    print("All tests passed!")
